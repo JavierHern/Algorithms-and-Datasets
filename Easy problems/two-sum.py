@@ -36,18 +36,23 @@
 
 
 def two_sum(nums, target):
-    p1 = 0
-    p2 = len(nums) - 1
+    #Map to store numbers we've seen and their indices
+    seen = {}
     
-    while p1 < p2:
-        actual_sum = nums[p1] + nums[p2]
-    
-        if actual_sum == target:
-            return [p1, p2]
-        if target > actual_sum:
-            p1 += 1
-        if target < actual_sum:
-            p2 -= 1
+    # Iterate and enumerate all the numbs array
+    for i, num in enumerate(nums):
+        # Define the complement
+        complement = target - num
+        
+        # if the complement is in seen, then the pairs are already found
+        if complement in seen:
+            return [seen[complement], i]
+        
+        #set the number with it's index
+        seen[num] = i
+        
+    # return none if the complements were not found
+    return None
 
 
 def main():
@@ -55,5 +60,16 @@ def main():
     target = 9
     result = two_sum(nums, target)
     print("resultado (indices): " + str(result))
+
+    nums = [1, 10, 2, 8, 5]
+    target = 9
+    result = two_sum(nums, target)
+    print("resultado (indices): " + str(result))
+
+    nums = [30, 5, 3, 4, 10]
+    target = 40
+    result = two_sum(nums, target)
+    print("resultado (indices): " + str(result))
+
 
 main()
