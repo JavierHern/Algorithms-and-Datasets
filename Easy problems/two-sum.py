@@ -35,18 +35,25 @@
 ###
 
 
-def twoSum(nums, target):
-
-    for i in range(len(nums)):
-        for j in range(1, len(nums)):
-            if nums[j] + nums[i] == target:
-                return [i, j]
+def two_sum(nums, target):
+    p1 = 0
+    p2 = len(nums) - 1
+    
+    while p1 < p2:
+        actual_sum = nums[p1] + nums[p2]
+    
+        if actual_sum == target:
+            return [p1, p2]
+        if target > actual_sum:
+            p1 += 1
+        if target < actual_sum:
+            p2 -= 1
 
 
 def main():
     nums = [1, 2, 3, 4, 5]
     target = 9
-    result = twoSum(nums, target)
+    result = two_sum(nums, target)
     print("resultado (indices): " + str(result))
 
 main()
