@@ -72,3 +72,12 @@ main()
 
 # Tiempo: O(n) donde n es la longitud de la cadena
 # Espacio: O(n) para almacenar la cadena limpia
+
+
+### El Patrón "Two Pointers" en Arrays
+
+# Este patrón es extremadamente útil cuando:
+
+# 1. Trabajas con secuencias ordenadas o donde el orden es relevante
+# 2. Buscas pares, subconjuntos o elementos que satisfacen una condición
+# 3. Necesitas comparar elementos en diferentes posiciones
